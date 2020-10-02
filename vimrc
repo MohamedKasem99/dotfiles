@@ -97,3 +97,4 @@ xnoremap * y/<C-f>p<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-f> :Rg<CR>
 nnoremap <C-d> :YcmCompleter GoToDefinition<CR>
+nnoremap <C-e> :norm O__import__("ipdb").set_trace()<ESC>
