@@ -28,7 +28,7 @@ def check_target_path(target):
     parent_dir = os.path.dirname(target)
     if not os.path.exists(parent_dir):
         os.makedirs(parent_dir)
-    if os.path.exists(target):
+    if os.path.exists(target) or os.path.islink(target):
         os.remove(target)
 
 
