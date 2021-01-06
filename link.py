@@ -4,7 +4,7 @@ from sys import exit
 
 HOME = os.environ.get("HOME", "/home")
 
-os.chdir("dotfiles")
+os.chdir("~/dotfiles")
 
 file_guide = {
     "vimrc": "{}/.vimrc".format(HOME),
