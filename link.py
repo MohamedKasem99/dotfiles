@@ -1,21 +1,31 @@
 #! /usr/bin/python3
 import os
-from sys import exit
+import sys
 
-HOME = os.environ.get("HOME", "/home")
+HOME = os.environ.get("HOME")
+if not HOME:
+    sys.exit(1)
 
-os.chdir("~/dotfiles")
-
-file_guide = {
+FILE_GUIDE = {
     "vimrc": "{}/.vimrc".format(HOME),
     "bashrc": "{}/.bashrc".format(HOME),
     "zshrc": "{}/.zshrc".format(HOME),
     "regolith-i3-config": "{}/.config/regolith/i3/config".format(HOME),
 }
 
+IGNORED = [
+    "link.py",
+    ".git",
+    "scripts",
+    "dotfiles",
+    "installer.sh",
+]
+
 
 def display_warnings():
-    files_not_included = filter(lambda x: x not in file_guide.keys(), os.listdir())
+    files_not_included = filter(
+        lambda x: x not in list(FILE_GUIDE.keys()) + IGNORED, os.listdir()
+    )
     for not_included in files_not_included:
         print(
             "[!!!] File: {} is in the repo but has no specified destination".format(
@@ -32,11 +42,17 @@ def check_target_path(target):
         os.remove(target)
 
 
-display_warnings()
-for src, dest in file_guide.items():
-    if os.path.exists(src):
-        check_target_path(dest)
-        os.symlink(os.path.join(os.getcwd(), src), dest)
-        print("[+] Created symlink {} -> {}".format(src, dest))
-    else:
-        print("[!] Couldn't find file: {}".format(src))
+def main():
+    display_warnings()
+    for src, dest in FILE_GUIDE.items():
+        src_path = f"{HOME}/dotfiles/dotfiles/{src}"
+        if os.path.exists(src_path):
+            check_target_path(dest)
+            os.symlink(src_path, dest)
+            print("[+] Created symlink {} -> {}".format(src, dest))
+        else:
+            print("[!] Couldn't find file: {}".format(src))
+
+
+if __name__ == "__main__":
+    main()
