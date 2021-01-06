@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -9,7 +16,8 @@ export ZSH="/home/kasem/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="af-magic"
-ZSH_THEME="bira"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="bira"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -19,8 +27,7 @@ ZSH_THEME="bira"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.  # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true" 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -138,12 +145,12 @@ alias ssh_GCP="ssh -i ~/.ssh/keyword_matching_vm firstenaction@34.70.253.237"
 
 alias emacs="XLIB_SKIP_ARGB_VISUALS=1 emacs --with-x-toolkit=lucid"
 
-alias uni="cd /media/kasem/Happy_place/University_stuff/Year_4/Spring_2020"
+alias uni="cd /media/kasem/Happy_place/uni"
 alias playground="cd /media/kasem/Happy_place/University_stuff/PlayGround"
 alias gig="cd /opt/code/git.gig.tech/openvcloud/"
 alias sml="rlwrap sml"
 alias scheme="rlwrap scheme"
-alias lyra-product="cd /media/kasem/Happy_place/University_stuff/PlayGround/Lyra/lyra-product;source ../venv/bin/activate;code ."
+alias lyra-product="cd /media/kasem/Happy_place/uni/PlayGround/Lyra/lyra-product;source ../venv/bin/activate;code ."
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -160,6 +167,10 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --follow"
 export HISTSIZE=5000
 export HISTFILE=~/.zsh_history
 setopt hist_ignore_all_dups
-
+export CM_LAUNCHER=rofi
 # Enable better colors for ls command 
 . "/home/kasem/.local/share/lscolors.sh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source /tmp/edge_colors/zsh/.zsh-theme-edge-dark

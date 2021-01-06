@@ -526,19 +526,21 @@ exec --no-startup-id $i3-wm.program.2
 set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
 
+exec --no-startup-id clipmenud
 
 ################################################################################
 # 			Apps in specific workspace configs
 ################################################################################
 
 assign [class="Firefox"] $ws2
-assign [class="Code"] $ws1
 assign [class="Spotify"] $ws3
 assign [class="TelegramDesktop"] $ws3
 assign [class="zoom"] $ws6
+assign [class="Tandem"] $ws6
 
 
 ################################################################################
 # 			Custom bindings
 #################################################################################
 bindsym $mod+Ctrl+h exec histsearch.sh
+bindsym $mod+Ctrl+l exec clipmenu

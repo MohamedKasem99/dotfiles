@@ -20,7 +20,6 @@ set shiftwidth=4
 set expandtab
 set mouse=a
 
-colo monokai
 imap <C-c> <ESC>
 
 
@@ -37,6 +36,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'psf/black'
+Plugin 'sainnhe/edge'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -75,6 +75,7 @@ autocmd BufWritePre *.py execute ':Black'
 set statusline=%{FugitiveStatusline()}%F%m%r%h%w\ \ [TYPE=%Y]\ [POS=%l,%v]
 
 
+" Customize lightline
 " Adding git to lightline (statusline)
 let gilightline = {
       \ 'colorscheme': 'wombat',
@@ -86,8 +87,21 @@ let gilightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+let g:lightline = {}
+let g:lightline.colorscheme = 'edge'
 
+"
+" Set edge colorscheme 
+if has('termguicolors')
+  set termguicolors
+endif
 
+" The configuration options should be placed before `colorscheme edge`.
+let g:edge_style = 'default'
+let g:edge_enable_italic = 1
+let g:edge_disable_italic_comment = 1
+
+colorscheme edge
 
 
 " My keymappings 
