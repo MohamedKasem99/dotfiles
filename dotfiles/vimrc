@@ -48,6 +48,7 @@ Plugin 'haya14busa/is.vim'
 Plugin 'BurntSushi/ripgrep'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'vim-syntastic/syntastic'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
