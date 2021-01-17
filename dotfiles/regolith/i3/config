@@ -174,6 +174,10 @@ bindsym $mod+Ctrl+Shift+Down move workspace to output down
 bindsym $mod+Ctrl+Shift+Up move workspace to output up
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
 
+bindsym $mod+Ctrl+Shift+h move workspace to output left
+bindsym $mod+Ctrl+Shift+j move workspace to output down
+bindsym $mod+Ctrl+Shift+k move workspace to output up
+bindsym $mod+Ctrl+Shift+l move workspace to output right
 ## Modify // Next Window Orientation // <> Backspace ##
 bindsym $mod+BackSpace split toggle
 
@@ -537,8 +541,9 @@ assign [class="Spotify"] $ws3
 assign [class="TelegramDesktop"] $ws3
 assign [class="zoom"] $ws6
 assign [class="Tandem"] $ws6
-
-
+for_window [class="Org.gnome.Nautilus"] floating enable
+for_window [class="Typora"] floating enable
+for_window [title="chat.gig.tech"] move to container to workspace $ws6
 ################################################################################
 # 			Custom bindings
 #################################################################################
