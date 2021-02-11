@@ -3,12 +3,14 @@ autorandr
 cmatrix
 dmenu
 i3
+fzf
 docker
-docke
+docker-compose
 fakeroot
 feh
 firefox 
-gnom
+gnome-control-center
+vim
 gvim
 htop
 jq
