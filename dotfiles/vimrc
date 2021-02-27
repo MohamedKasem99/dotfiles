@@ -11,6 +11,7 @@ set showcmd
 set matchpairs+=<:>
 set autoindent	
 set smartindent
+let python_highlight_all=1
 syntax on
 set confirm
 set hlsearch
@@ -37,6 +38,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'psf/black'
 Plugin 'sainnhe/edge'
+"Plugin 'numirias/semshi' , {'do': ':UpdateRemotePlugins'}
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -49,6 +51,8 @@ Plugin 'BurntSushi/ripgrep'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'jaxbot/semantic-highlight.vim'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub

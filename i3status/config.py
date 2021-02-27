@@ -25,6 +25,11 @@ status.register(
     "cpu_usage",
     format="🖥️{usage:02}%",
 )
+status.register(
+    "mem",
+    format="💾{used_mem:02}/{total_mem:02}GB",
+    divisor=1024 ** 3,
+)
 
 # The battery monitor has many formatting options, see README for details
 
