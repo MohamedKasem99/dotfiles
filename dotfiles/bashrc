@@ -102,11 +102,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -135,31 +130,9 @@ fi
 
 # =============================== All aliases =======================================
 
-alias eb='nano ~/.bashrc'
-alias sb='source ~/.bashrc'
 alias gs='git status'
 alias gp='git pull'
-alias cw='cd ~/catkin_ws'
-#alias cs='cd ~/catkin_ws/src'
-#alias cm='cd ~/catkin_ws && catkin_make'
-#alias x='rosnode kill -a & killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient & killall -9 rosmaster & killall -9 rviz & rosnode kill -a '
-alias pfl="pip3 freeze --local"
 # =============================== All exports =======================================
-
-#export ROS_MASTER_URI=http://kasem.local:11311
-#export ROS_HOSTNAME=kasem.local
 export PATH=~/.local/bin/:/snap/bin:$PATH
-# =============================== JAVA ENVs =========================================
-
-#export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-#export PATH_TO_FX=/usr/lib/javafx-sdk-11.0.2/lib
-
-# =============================== All sources =======================================
-
-
 # ================================ SSH TO GCP =======================================
 alias ssh_GCP="ssh -i ~/.ssh/id_rsa firstenaction@34.70.253.237"
-alias emacs="XLIB_SKIP_ARGB_VISUALS=1 emacs --with-x-toolkit=lucid"
-
-
-
